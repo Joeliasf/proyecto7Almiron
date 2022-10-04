@@ -1,0 +1,127 @@
+body{
+    text-align: center;
+}
+h1{
+    text-align: center;
+    border: 0.5cm solid black;
+    border-radius: 10cm;
+}
+.ganador {
+    margin-top: 30px;
+    text-align: center;
+    border: 0.5cm solid green;
+    border-radius: 5cm;
+    background-color: blue
+}
+.perdedor {
+    margin-top: 30px;
+    text-align: center;
+    border: 0.5cm solid red;
+    border-radius: 5cm;
+    background-color: black;
+    color : white;
+}
+#juego-refresh{
+    display: flex;
+    flex-direction: inline;
+    justify-content: center;
+}
+
+#boton-iniciar{
+    margin-top: 15px;
+    border: 0.2cm solid blue;
+    border-radius: 10cm;
+}
+#refresh button{
+    margin-top: 15px;
+    border: 0.2cm solid blue;
+    border-radius: 10cm;
+}
+#imagenes-primera-carta-mano{
+    display :inline-block;
+    padding-top: 30px;
+    font-style: italic;
+}
+
+#imagenes-segunda-carta-mano{
+    display :inline-block;
+    font-style: italic;
+}
+
+#resultado-suma-mano{
+    margin-bottom: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+   
+}
+#boton-pedir{
+    margin-top: 24px;
+}
+#boton-pedir-dealer{
+   margin-top: 10px;
+   margin-bottom: 10px;
+}
+
+#imagenes-primera-carta-dealer{
+    display :inline-block;
+    font-style: italic;
+}
+
+#imagenes-segunda-carta-dealer{
+    display :inline-block;
+    font-style: italic;
+}
+#imagenes-primera-carta-dealer img{
+    padding-left: 50px;
+}
+#imagenes-segunda-carta-dealer img{
+    padding-right: 50px;
+}
+#resultado-suma-dealer{
+    margin-bottom: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+#imagenes-nueva-carta-mano{
+    display: inline-block;
+    font-style: italic;
+}
+#imagenes-nueva-carta-dealer{
+    display: inline-block;
+    font-style: italic;
+}
+#imagenes-ultima-carta-mano{
+    display: inline-block;
+    font-style: italic;
+}
+#imagenes-ultima-carta-dealer{
+    display: inline-block;
+    font-style: italic;
+}
+#pagina-juego {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    border: 0.2cm solid rgb(158, 30, 41);
+    width: 200px;
+    height: auto;
+    margin: 0 auto;
+}
+#parrafo-juego{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    border: 0.2cm solid rgb(30, 158, 47);
+    border-radius: 10cm;
+    width: 350px;
+    height: auto;
+    margin: 0 auto;
+    padding-top: 15px;
+    margin-top: 10px;
+}
+#parrafo-juego a {
+    font-weight: 300
+}
+#parrafo-juego h3{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    text-decoration: underline;
+}
