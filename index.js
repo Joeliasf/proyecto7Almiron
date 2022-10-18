@@ -41,8 +41,6 @@ const valores = [{
 ];
 const palos = ["picas", "corazones", "treboles", "diamantes"]
 
-/* const puntajesGenerales = JSON.parse(localStorage.getItem("nombres Ingresados"))||[]; */
-/* const valorPuntajesGenerales = JSON.parse(localStorage.getItem("puntuaciones"))||[]; */
 
 let boton = 0;
 let primeraCarta = 0;
@@ -116,7 +114,7 @@ function puntaje(){
     let puntuacion = document.getElementById("ingresar-puntaje")
     puntuacion.innerHTML= `<div id="boton-ingresar">
         <input type="text" id="nombre">
-        <button onclick="ingresarPuntuacion()"> ingrese su nombre </button>
+        <button onclick="ingresarPuntuacion()"> Ingrese su nombre </button>
         </div>
         <div id="nombre-correcto-ingresado"></div>
         `  
@@ -125,8 +123,8 @@ function puntaje(){
 function verPuntaje(){
     let verPuntuacion = document.getElementById("ver-puntaje")
     verPuntuacion.innerHTML= `<div id="boton-ver-puntaje">
-        <input type="text" id="nombre-puntaje" placeholder="ingrese su nombre">
-        <button onclick="loginNombre()"> ver su puntaje </button>
+        <input type="text" id="nombre-puntaje" placeholder="Ingrese su nombre">
+        <button onclick="loginNombre()"> Ver su puntaje </button>
         </div>
         `  
 }
@@ -142,7 +140,7 @@ function verPuntaje(){
     localStorage.setItem("nombresIngresados", JSON.stringify(usuariosRegistrados));
 
     let nombreCorrectoIngresado = document.getElementById("nombre-correcto-ingresado")
-    nombreCorrectoIngresado.innerHTML = `puntaje ingresado!`
+    nombreCorrectoIngresado.innerHTML = `¡Puntaje ingresado!`
     let botonIngresar = document.getElementById("boton-ingresar")
     botonIngresar.style.display = `none`
     verPuntaje()
@@ -166,7 +164,7 @@ function loginNombre(){
         `  
            if (usuarioBienIngresado.length == 1){
             let nombreCorrectoIngresado = document.getElementById("nombre-correcto-ingresado")
-            nombreCorrectoIngresado.innerHTML = `jugador no ingresado!`
+            nombreCorrectoIngresado.innerHTML = `Ese jugador no ha sido ingresado`
             let verPuntuacion = document.getElementById("ver-puntaje")
             verPuntuacion.innerHTML= `<div>
             <p> Su puntuacion es de ${usuarioBienIngresado.length-1} </p>
@@ -209,7 +207,7 @@ function ultimaSuma(){
         resultadoFinal = resta(cartasMano,cartasManoDealer)
         if(resultadoFinal<=0){
             usuarioPerdedor = document.getElementById("perdedor");
-            usuarioPerdedor.innerHTML = "<h2>usted ha perdido</h2>"
+            usuarioPerdedor.innerHTML = "<h2>Usted ha perdido</h2>"
             usuarioPerdedor.className = "perdedor"
             botonCartaNuevaDealer.innerHTML = ``
             botonCartasDealer.innerHTML = ``
@@ -222,7 +220,7 @@ function ultimaSuma(){
             mostrarPaginas()
         }else if(resultadoFinal>0){
             usuarioGanador = document.getElementById("ganador");
-            usuarioGanador.innerHTML = "<h2>usted ha ganado</h2>";
+            usuarioGanador.innerHTML = "<h2>Usted ha ganado</h2>";
             usuarioGanador.className = "ganador" 
             botonCartaNuevaDealer.innerHTML = ``
             botonCartasDealer.innerHTML = ``
@@ -239,7 +237,7 @@ function ultimaSuma(){
             resultadoFinal = resta(nuevasCartasMano,cartasManoDealer)
             if(resultadoFinal>0){
                 usuarioGanador = document.getElementById("ganador");
-                usuarioGanador.innerHTML = "<h2>usted ha ganado</h2>";
+                usuarioGanador.innerHTML = "<h2>Usted ha ganado</h2>";
                 usuarioGanador.className = "ganador" 
                 botonCartaNuevaDealer.innerHTML = ``
                 botonCartasDealer.innerHTML = ``
@@ -252,7 +250,7 @@ function ultimaSuma(){
                 puntaje()
             }else if(resultadoFinal<=0){
              usuarioPerdedor = document.getElementById("perdedor");
-            usuarioPerdedor.innerHTML = "<h2>usted ha perdido</h2>"
+            usuarioPerdedor.innerHTML = "<h2>Usted ha perdido</h2>"
             usuarioPerdedor.className = "perdedor"
             botonCartaNuevaDealer.innerHTML = ``
             botonCartasDealer.innerHTML = ``
@@ -269,7 +267,7 @@ function ultimaSuma(){
             resultadoFinal = resta(nuevasCartasMano,nuevasCartasDealer)
             if(resultadoFinal<=0){
                 usuarioPerdedor = document.getElementById("perdedor");
-                usuarioPerdedor.innerHTML = "<h2>usted ha perdido</h2>"
+                usuarioPerdedor.innerHTML = "<h2>Usted ha perdido</h2>"
                 usuarioPerdedor.className = "perdedor"
                 botonCartaNuevaDealer.innerHTML = ``
                 botonCartasDealer.innerHTML = ``
@@ -282,7 +280,7 @@ function ultimaSuma(){
                 mostrarPaginas()
             }else if (resultadoFinal>0){
                 usuarioGanador = document.getElementById("ganador");
-                usuarioGanador.innerHTML = "<h2>usted ha ganado</h2>";
+                usuarioGanador.innerHTML = "<h2>Usted ha ganado</h2>";
                 usuarioGanador.className = "ganador"
                 botonCartaNuevaDealer.innerHTML = ``
                 botonCartasDealer.innerHTML = ``
@@ -299,7 +297,7 @@ function ultimaSuma(){
             resultadoFinal = resta(cartasFinales,nuevasCartasDealer)
             if(resultadoFinal>0){
             usuarioGanador = document.getElementById("ganador");
-            usuarioGanador.innerHTML = "<h2>usted ha ganado</h2>";
+            usuarioGanador.innerHTML = "<h2>Usted ha ganado</h2>";
             usuarioGanador.className = "ganador" 
             botonCartaNuevaDealer.innerHTML = ``
             botonCartasDealer.innerHTML = ``
@@ -312,7 +310,7 @@ function ultimaSuma(){
             puntaje()}
         else if(resultadoFinal<=0){
             usuarioPerdedor = document.getElementById("perdedor");
-            usuarioPerdedor.innerHTML = "<h2>usted ha perdido</h2>"
+            usuarioPerdedor.innerHTML = "<h2>Usted ha perdido</h2>"
                 usuarioPerdedor.className = "perdedor"
                 botonCartaNuevaDealer.innerHTML = ``
                 botonCartasDealer.innerHTML = ``
@@ -329,7 +327,7 @@ function ultimaSuma(){
             resultadoFinal = resta(cartasFinales,cartasFinalesDealer)
             if(resultadoFinal>0){
                 usuarioGanador = document.getElementById("ganador");
-                usuarioGanador.innerHTML = "<h2>usted ha ganado</h2>";
+                usuarioGanador.innerHTML = "<h2>Usted ha ganado</h2>";
                 usuarioGanador.className = "ganador"
                 botonCartaNuevaDealer.innerHTML = ``
                 botonCartasDealer.innerHTML = ``
@@ -342,7 +340,7 @@ function ultimaSuma(){
                 puntaje()
             } else if(resultadoFinal<=0){
                 usuarioPerdedor = document.getElementById("perdedor");
-                usuarioPerdedor.innerHTML = "<h2>usted ha perdido</h2>"
+                usuarioPerdedor.innerHTML = "<h2>Usted ha perdido</h2>"
                 usuarioPerdedor.className = "perdedor"
                 botonCartaNuevaDealer.innerHTML = ``
                 botonCartasDealer.innerHTML = ``
@@ -359,7 +357,7 @@ function ultimaSuma(){
             resultadoFinal = resta(cartasFinales,cartasManoDealer)
             if(resultadoFinal>0){
                 usuarioGanador = document.getElementById("ganador");
-                usuarioGanador.innerHTML = "<h2>usted ha ganado</h2>";
+                usuarioGanador.innerHTML = "<h2>Usted ha ganado</h2>";
                 usuarioGanador.className = "ganador"
                 botonCartaNuevaDealer.innerHTML = ``
                 botonCartasDealer.innerHTML = ``
@@ -372,7 +370,7 @@ function ultimaSuma(){
                 puntaje()
             } else if(resultadoFinal<=0){
                 usuarioPerdedor = document.getElementById("perdedor");
-                usuarioPerdedor.innerHTML = "<h2>usted ha perdido</h2>"
+                usuarioPerdedor.innerHTML = "<h2>Usted ha perdido</h2>"
                 usuarioPerdedor.className = "perdedor"
                 botonCartaNuevaDealer.innerHTML = ``
                 botonCartasDealer.innerHTML = ``
@@ -389,7 +387,7 @@ function ultimaSuma(){
             resultadoFinal = resta(cartasMano,nuevasCartasDealer)
             if(resultadoFinal>0){
                 usuarioGanador = document.getElementById("ganador");
-                usuarioGanador.innerHTML = "<h2>usted ha ganado</h2>";
+                usuarioGanador.innerHTML = "<h2>Usted ha ganado</h2>";
                 usuarioGanador.className = "ganador"
                 botonCartaNuevaDealer.innerHTML = ``
                 botonCartasDealer.innerHTML = ``
@@ -402,7 +400,7 @@ function ultimaSuma(){
                 puntaje()
             }else if(resultadoFinal<=0){
                 usuarioPerdedor = document.getElementById("perdedor");
-                usuarioPerdedor.innerHTML = "<h2>usted ha perdido</h2>"
+                usuarioPerdedor.innerHTML = "<h2>Usted ha perdido</h2>"
                 usuarioPerdedor.className = "perdedor"
                 botonCartaNuevaDealer.innerHTML = ``
                 botonCartasDealer.innerHTML = ``
@@ -419,7 +417,7 @@ function ultimaSuma(){
             resultadoFinal = resta(cartasMano,cartasFinalesDealer)
             if(resultadoFinal>0){
                 usuarioGanador = document.getElementById("ganador");
-                usuarioGanador.innerHTML = "<h2>usted ha ganado</h2>";
+                usuarioGanador.innerHTML = "<h2>Usted ha ganado</h2>";
                 usuarioGanador.className = "ganador"
                 botonCartaNuevaDealer.innerHTML = ``
                 botonCartasDealer.innerHTML = ``
@@ -432,7 +430,7 @@ function ultimaSuma(){
                 puntaje()
             }else if(resultadoFinal<=0){
                 usuarioPerdedor = document.getElementById("perdedor");
-                usuarioPerdedor.innerHTML = "<h2>usted ha perdido</h2>"
+                usuarioPerdedor.innerHTML = "<h2>Usted ha perdido</h2>"
                 usuarioPerdedor.className = "perdedor"
                 botonCartaNuevaDealer.innerHTML = ``
                 botonCartasDealer.innerHTML = ``
@@ -449,7 +447,7 @@ function ultimaSuma(){
             resultadoFinal = resta(nuevasCartasMano,cartasFinalesDealer)
             if(resultadoFinal>0){
                 usuarioGanador = document.getElementById("ganador");
-                usuarioGanador.innerHTML = "<h2>usted ha ganado</h2>";
+                usuarioGanador.innerHTML = "<h2>Usted ha ganado</h2>";
                 usuarioGanador.className = "ganador"
                 botonCartaNuevaDealer.innerHTML = ``
                 botonCartasDealer.innerHTML = ``
@@ -462,7 +460,7 @@ function ultimaSuma(){
                 puntaje()
             }else if(resultadoFinal<0){
                 usuarioPerdedor = document.getElementById("perdedor");
-                usuarioPerdedor.innerHTML = "<h2>usted ha perdido</h2>"
+                usuarioPerdedor.innerHTML = "<h2>Usted ha perdido</h2>"
                 usuarioPerdedor.className = "perdedor"
                 botonCartaNuevaDealer.innerHTML = ``
                 botonCartasDealer.innerHTML = ``
@@ -500,7 +498,7 @@ function pedirCarta(){
     
     primeraCarta = document.getElementById("imagenes-primera-carta-mano")
     primeraCarta.innerHTML=`<img src="./imagenes_cartas/${nombreCarta}${palos[paloCarta]}.png" alt="carta">
-    <p> Su primera carta es ${nombreCarta} de ${palos[paloCarta]} (valor : ${valorCarta})</p>
+    <p id="primera-carta-player"> Su primera carta es ${nombreCarta} de ${palos[paloCarta]} (valor : ${valorCarta})</p>
     `
     }
     function pedirSegundaCarta(){
@@ -508,15 +506,16 @@ function pedirCarta(){
         segundaCartaMano = cartaMano()
         segundaCarta = document.getElementById("imagenes-segunda-carta-mano")
         segundaCarta.innerHTML=`<img src="./imagenes_cartas/${nombreCarta}${palos[paloCarta]}.png" alt="carta">
-        <p> Su segunda carta es ${nombreCarta} de ${palos[paloCarta]} (valor : ${valorCarta})</p>
+        <p id="segunda-carta-player"> Su segunda carta es ${nombreCarta} de ${palos[paloCarta]} (valor : ${valorCarta})</p>
         `
         cartasMano = suma(parseFloat(primeraCartaMano), parseFloat(segundaCartaMano));
         resultadoCartasMano = document.getElementById("resultado-suma-mano")
-        resultadoCartasMano.innerHTML=`sus cartas suman ${cartasMano}`;
+        resultadoCartasMano.innerHTML=`Sus cartas suman ${cartasMano}
+        <p id="player">`;
         
         if (cartasMano===21){
             usuarioGanador = document.getElementById("ganador")
-            usuarioGanador.innerHTML = "<h2>usted ha ganado</h2>";
+            usuarioGanador.innerHTML = "<h2>Usted ha ganado</h2>";
             usuarioGanador.className = "ganador"
             botonCartaNuevaDealer.innerHTML = ``
             botonCartasDealer.innerHTML = ``
@@ -530,7 +529,7 @@ function pedirCarta(){
             puntaje()
           }else if(cartasMano>21){
             usuarioPerdedor = document.getElementById("perdedor")
-            usuarioPerdedor.innerHTML = "<h2>usted ha perdido</h2>"
+            usuarioPerdedor.innerHTML = "<h2>Usted ha perdido</h2>"
             usuarioPerdedor.className = "perdedor"
             botonCartaNuevaDealer.innerHTML = ``
             botonCartasDealer.innerHTML = ``
@@ -547,7 +546,7 @@ function pedirCarta(){
            
           botonCartas.innerHTML = ""
         botonCartasDealer = document.getElementById("boton-pedir-dealer");
-        botonCartasDealer.innerHTML = `<button>pedir cartas dealer</button>`
+        botonCartasDealer.innerHTML = `<button>Pedir cartas dealer</button>`
         botonCartasDealer.addEventListener("click", pedirCartaDealer)
         botonCartasDealer.addEventListener("click", pedirSegundaCartaDealer)
     }
@@ -557,21 +556,21 @@ function pedirCarta(){
 
             primeraCartaManoDealerHTML = document.getElementById("imagenes-primera-carta-dealer")
             primeraCartaManoDealerHTML.innerHTML=`<img src="./imagenes_cartas/${nombreCarta}${palos[paloCarta]}.png" alt="carta">
-        <p> La primera carta del dealer es ${nombreCarta} de ${palos[paloCarta]} (valor : ${valorCarta})</p>
+        <p id="primera-carta-deal"> La primera carta del dealer es ${nombreCarta} de ${palos[paloCarta]} (valor : ${valorCarta})</p>
         `}
         function pedirSegundaCartaDealer(){
             segundaCartaManoDealer = cartaManoDealer()
             segundaCartaManoDealerHTML = document.getElementById("imagenes-segunda-carta-dealer")
             segundaCartaManoDealerHTML.innerHTML=`<img src="./imagenes_cartas/${nombreCarta}${palos[paloCarta]}.png" alt="carta">
-        <p> La segunda carta del dealer es ${nombreCarta} de ${palos[paloCarta]} (valor : ${valorCarta})</p>
+        <p id="segunda-carta-deal"> La segunda carta del dealer es ${nombreCarta} de ${palos[paloCarta]} (valor : ${valorCarta})</p>
         `
         cartasManoDealer = suma(parseFloat(primeraCartaManoDealer), parseFloat(segundaCartaManoDealer));
         resultadoCartasDealer = document.getElementById("resultado-suma-dealer")
-        resultadoCartasDealer.innerHTML=`las cartas del dealer sumar ${cartasManoDealer}`  
+        resultadoCartasDealer.innerHTML=`Las cartas del dealer sumar ${cartasManoDealer}`  
         botonCartasDealer.innerHTML= ""
         if(cartasManoDealer===21){
             usuarioPerdedor = document.getElementById("perdedor")
-            usuarioPerdedor.innerHTML = "<h2>usted ha perdido</h2>"
+            usuarioPerdedor.innerHTML = "<h2>Usted ha perdido</h2>"
             usuarioPerdedor.className = "perdedor"
             botonCartaNuevaDealer.innerHTML = ``
             botonCartasDealer.innerHTML = ``
@@ -585,7 +584,7 @@ function pedirCarta(){
             mostrarPaginas()
         } else if (cartasManoDealer>21){
             usuarioGanador = document.getElementById("ganador")
-            usuarioGanador.innerHTML = "<h2>usted ha ganado</h2>";
+            usuarioGanador.innerHTML = "<h2>Usted ha ganado</h2>";
             usuarioGanador.className = "ganador"
             botonCartaNuevaDealer.innerHTML = ``
             botonCartasDealer.innerHTML = ``
@@ -600,14 +599,13 @@ function pedirCarta(){
         else{
             
             botonCartaNueva = document.getElementById("boton-pedir-nueva")
-            botonCartaNueva.innerHTML = `<button>pedir carta nueva</button>`;
+            botonCartaNueva.innerHTML = `<button>Pedir carta nueva</button>`;
             botonCartaNueva.addEventListener("click", pedirCartaNueva)
             botonPlantarse = document.getElementById("boton-plantarse")
             botonPlantarse.innerHTML = `<button> plantarse </button>`
             botonPlantarse.addEventListener("click", plantarse)
             botonPlantarseDealer = document.getElementById("boton-plantarse-dealer")
-            botonPlantarseDealer.innerHTML = `<button> el dealer se planta (termina el juego)</button>`
-            /* botonPlantarseDealer.addEventListener("click", PlantarseDealer) */
+            botonPlantarseDealer.innerHTML = `<button> El dealer se planta (Finaliza el juego)</button>`
             botonPlantarseDealer.addEventListener("click", () =>{
                 Swal.fire({
                     background : "#10A2B0" ,
@@ -626,7 +624,7 @@ function pedirCarta(){
             }
             )
             botonCartaNuevaDealer = document.getElementById("boton-pedir-carta-nueva-dealer");
-            botonCartaNuevaDealer.innerHTML = `<button>pedir carta nueva dealer</button>`
+            botonCartaNuevaDealer.innerHTML = `<button>Pedir carta nueva dealer</button>`
             botonCartaNuevaDealer.addEventListener("click", cartaDealerRondaDos)
 
         }
@@ -637,15 +635,15 @@ function pedirCarta(){
         
         let pedirCartaNueva = document.getElementById("imagenes-nueva-carta-mano")
         pedirCartaNueva.innerHTML=`<img src="./imagenes_cartas/${nombreCarta}${palos[paloCarta]}.png" alt="carta">
-        <p> Su tercera carta es ${nombreCarta} de ${palos[paloCarta]} (valor : ${valorCarta})</p>
+        <p id="tercera-carta-player"> Su tercera carta es ${nombreCarta} de ${palos[paloCarta]} (valor : ${valorCarta})</p>
         `
         botonCartaNueva.innerHTML = ""
     nuevasCartasMano = sumaMultiple(parseFloat(primeraCartaMano), parseFloat(segundaCartaMano), parseFloat(cartaNueva));
     resultadoCartasMano = document.getElementById("resultado-suma-mano")
-    resultadoCartasMano.innerHTML=`sus cartas ahora suman ${nuevasCartasMano}`;
+    resultadoCartasMano.innerHTML=`Sus cartas ahora suman ${nuevasCartasMano}`;
         if(nuevasCartasMano>21){
             usuarioPerdedor = document.getElementById("perdedor")
-            usuarioPerdedor.innerHTML = "<h2>usted ha perdido</h2>"
+            usuarioPerdedor.innerHTML = "<h2>Usted ha perdido</h2>"
             usuarioPerdedor.className = "perdedor"
             botonCartaNuevaDealer.innerHTML = ``
             botonCartasDealer.innerHTML = ``
@@ -659,7 +657,7 @@ function pedirCarta(){
          
     }else if(nuevasCartasMano==21){
             usuarioGanador = document.getElementById("ganador")
-            usuarioGanador.innerHTML = "<h2>usted ha ganado</h2>";
+            usuarioGanador.innerHTML = "<h2>Usted ha ganado</h2>";
             usuarioGanador.className = "ganador"
             botonCartaNuevaDealer.innerHTML = ``
             botonCartasDealer.innerHTML = ``
@@ -673,10 +671,10 @@ function pedirCarta(){
     }
     else {
         botonPlantarse = document.getElementById("boton-plantarse")
-        botonPlantarse.innerHTML = `<button> plantarse </button>`
+        botonPlantarse.innerHTML = `<button> Plantarse </button>`
         botonPlantarse.addEventListener("click", plantarse)
         botonUltimaCartaMano = document.getElementById("boton-pedir-ultima");
-        botonUltimaCartaMano.innerHTML = `<button>pedir ultima carta</button>`;
+        botonUltimaCartaMano.innerHTML = `<button>Pedir ultima carta</button>`;
         botonUltimaCartaMano.addEventListener("click", pedirUltimaCarta);
     }
     }
@@ -684,15 +682,15 @@ function pedirCarta(){
         pedirCartaNuevaDealer = cartaManoDealer()
         pedirCartaNuevaDealerHTML = document.getElementById("imagenes-nueva-carta-dealer")
         pedirCartaNuevaDealerHTML.innerHTML = `<img src="./imagenes_cartas/${nombreCarta}${palos[paloCarta]}.png" alt="carta">
-        <p> La tercera carta del dealer es ${nombreCarta} de ${palos[paloCarta]} (valor : ${valorCarta})</p>
+        <p id="tercera-carta-deal"> La tercera carta del dealer es ${nombreCarta} de ${palos[paloCarta]} (valor : ${valorCarta})</p>
         `
         nuevasCartasDealer = suma(parseFloat(cartasManoDealer), parseFloat(pedirCartaNuevaDealer));
     resultadoCartasDealer = document.getElementById("resultado-suma-dealer")
-        resultadoCartasDealer.innerHTML=`las nuevas cartas del dealer suman ${nuevasCartasDealer}`  
+        resultadoCartasDealer.innerHTML=`El dealer ahora suma ${nuevasCartasDealer}`  
         botonCartaNuevaDealer.innerHTML= "";
         if(nuevasCartasDealer>21){
             usuarioGanador = document.getElementById("ganador")
-            usuarioGanador.innerHTML = "<h2>usted ha ganado</h2>";
+            usuarioGanador.innerHTML = "<h2>Usted ha ganado</h2>";
             usuarioGanador.className = "ganador"
             botonCartaNuevaDealer.innerHTML = ``
             botonCartasDealer.innerHTML = ``
@@ -706,7 +704,7 @@ function pedirCarta(){
         }
         else if(nuevasCartasDealer===21){
             usuarioPerdedor = document.getElementById("perdedor")
-            usuarioPerdedor.innerHTML = "<h2>usted ha perdido</h2>"
+            usuarioPerdedor.innerHTML = "<h2>Usted ha perdido</h2>"
             usuarioPerdedor.className = "perdedor"
             botonCartaNuevaDealer.innerHTML = ``
             botonCartasDealer.innerHTML = ``
@@ -720,10 +718,10 @@ function pedirCarta(){
         }
         else{
             botonUltimaCartaDealer = document.getElementById("boton-pedir-ultima-carta-dealer");
-            botonUltimaCartaDealer.innerHTML = `<button>pedir ultima carta dealer</button>`
+            botonUltimaCartaDealer.innerHTML = `<button>Pedir ultima carta dealer</button>`
             botonUltimaCartaDealer.addEventListener("click", ultimaCartaDealer)
             botonPlantarseDealer = document.getElementById("boton-plantarse-dealer")
-            botonPlantarseDealer.innerHTML=`<button> el dealer se planta (termina el juego) </button>`
+            botonPlantarseDealer.innerHTML=`<button> El dealer se planta (termina el juego) </button>`
             botonPlantarseDealer.addEventListener("click", () =>{
                 Swal.fire({
                     background : "#10A2B0" ,
@@ -747,7 +745,7 @@ function pedirCarta(){
         pedirUnaUltimaCarta = cartaMano()
     ultimaCarta = document.getElementById("imagenes-ultima-carta-mano")
     ultimaCarta.innerHTML=`<img src="./imagenes_cartas/${nombreCarta}${palos[paloCarta]}.png" alt="carta">
-    <p> Su ultima carta es ${nombreCarta} de ${palos[paloCarta]} (valor : ${valorCarta})</p>
+    <p id="ultima-carta-player"> Su ultima carta es ${nombreCarta} de ${palos[paloCarta]} (valor : ${valorCarta})</p>
     `
 
     botonUltimaCartaMano.innerHTML=""
@@ -756,7 +754,7 @@ function pedirCarta(){
     resultadoCartasMano.innerHTML=`la suma final de sus cartas ahora es ${cartasFinales}`;
     if(cartasFinales>21){
         usuarioPerdedor = document.getElementById("perdedor")
-        usuarioPerdedor.innerHTML = "<h2>usted ha perdido</h2>"
+        usuarioPerdedor.innerHTML = "<h2>Usted ha perdido</h2>"
         usuarioPerdedor.className = "perdedor"
         botonCartaNuevaDealer.innerHTML = ``
         botonUltimaCartaDealer.innerHTML = ``
@@ -769,7 +767,7 @@ function pedirCarta(){
     }
     else{
         botonUltimaCartaDealer = document.getElementById("boton-pedir-ultima-carta-dealer");
-        botonUltimaCartaDealer.innerHTML = `<button>pedir ultima carta dealer</button>`
+        botonUltimaCartaDealer.innerHTML = `<button>Pedir ultima carta dealer</button>`
         botonUltimaCartaDealer.addEventListener("click", ultimaCartaDealer)
     }
     }
@@ -777,16 +775,16 @@ function pedirCarta(){
         cartaFinalDealer = cartaManoDealer()
         cartaFinalDealerHTML = document.getElementById("imagenes-ultima-carta-dealer")
         cartaFinalDealerHTML.innerHTML = `<img src="./imagenes_cartas/${nombreCarta}${palos[paloCarta]}.png" alt="carta">
-        <p> La ultima carta del dealer es ${nombreCarta} de ${palos[paloCarta]} (valor : ${valorCarta})</p>
+        <p id="ultima-carta-deal"> La ultima carta del dealer es ${nombreCarta} de ${palos[paloCarta]} (valor : ${valorCarta})</p>
         `
 
         botonUltimaCartaDealer.innerHTML=""
         cartasFinalesDealer = suma(parseFloat(nuevasCartasDealer), (cartaFinalDealer))
         resultadoCartasDealer = document.getElementById("resultado-suma-dealer")
-        resultadoCartasDealer.innerHTML=`las cartas finales del dealer suman ${cartasFinalesDealer}`
+        resultadoCartasDealer.innerHTML=`Las cartas finales del dealer suman ${cartasFinalesDealer}`
         if(cartasFinalesDealer>21){
             usuarioGanador = document.getElementById("ganador")
-            usuarioGanador.innerHTML = "<h2>usted ha ganado</h2>";
+            usuarioGanador.innerHTML = "<h2>Usted ha ganado</h2>";
             usuarioGanador.className = "ganador"
             botonCartaNuevaDealer.innerHTML = ``
             botonCartasDealer.innerHTML = ``
@@ -799,7 +797,7 @@ function pedirCarta(){
             puntaje()
         }else if(cartasFinalesDealer==21){
             usuarioPerdedor = document.getElementById("perdedor")
-            usuarioPerdedor.innerHTML = "<h2>usted ha perdido</h2>"
+            usuarioPerdedor.innerHTML = "<h2>Usted ha perdido</h2>"
             usuarioPerdedor.className = "perdedor"
             botonCartaNuevaDealer.innerHTML = ``
             botonCartasDealer.innerHTML = ``
@@ -824,7 +822,7 @@ function simulador(){
     boton = document.getElementById("boton")
     boton.style.display = "none"
     botonCartas = document.getElementById("boton-pedir");
-    botonCartas.innerHTML = `<button>pedir cartas</button>`;
+    botonCartas.innerHTML = `<button>Pedir cartas</button>`;
     botonCartas.addEventListener("click", pedirCarta)
     botonCartas.addEventListener("click", pedirSegundaCarta)
 
